@@ -50,29 +50,29 @@
 					<!-- li ui-sref-active="active" ui-sref="start.contact" ><a href="#/start/contact">联系方式</a></li -->
 					<li ui-sref-active="active" ui-sref="start.prod.prod1" ><a href="#/start/prod/prod1">购买软件</a></li>
 					<!-- li ui-sref-active="active" ui-sref="start.other" ><a href="#/start/other">其他信息</a></li> -->
-					<li ui-sref-active="active" ui-sref="userinfo.basic" ><a href="#/userinfo/basic">用户信息</a></li>
+					<!--<li ui-sref-active="active" ui-sref="userinfo.basic" ><a href="#/userinfo/basic">用户信息</a></li>-->
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<!--  li ><a href="#" ng-click="printme()">TEST</a></li>-->
 					<li ng-show="UserSvc.getCurrentUser()"><a href="#" ng-click="signOut()">退出登录</a></li>
-					<li ng-show="UserSvc.getCurrentUser()"><a href="#/userinfo/basic">[ {{ UserSvc.getCurrentUser().userName }} ]</a></li>
+					<!--<li ng-show="UserSvc.getCurrentUser()"><a href="#/userinfo/basic">[ {{ UserSvc.getCurrentUser().userName }} ]</a></li>
 					<li ng-show="!UserSvc.getCurrentUser()"><a data-toggle="modal" data-target="#signInBox" href="#">用户登录</a></li>
-					<li ng-show="!UserSvc.getCurrentUser()"><a data-toggle="modal" data-target="#signUpBox" href="#">用户注册</a></li>
+					<li ng-show="!UserSvc.getCurrentUser()"><a data-toggle="modal" data-target="#signUpBox" href="#">用户注册</a></li>-->
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多内容 <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-							<li><a href="#">我的信息</a></li>
-							<li><a href="#">沪牌日历</a></li>
-							<li role="separator" class="divider"></li>
-							<li class="dropdown-header">优惠信息</li>
-							<li><a href="#">我的优惠码</a></li>
-							<li><a href="#">我的推荐</a></li>
-							<li><a href="/act/signOut">退出登录</a></li>
-						</ul>
-			        </li>
-			      </ul>
-			</div>
-			<!--/.nav-collapse -->
+						  <!--<li><a href="#">我的信息</a></li>-->
+                        <li><a href="#">沪牌日历</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">优惠信息</li>
+						  <!--<li><a href="#">我的优惠码</a></li>
+                        <li><a href="#">我的推荐</a></li>
+                        <li><a href="/act/signOut">退出登录</a></li>-->
+                    </ul>
+                </li>
+              </ul>
+        </div>
+        <!--/.nav-collapse -->
 		</div>
 	</nav>
 	

@@ -1,35 +1,52 @@
 package com.kiwi.stripes.unitTest;
 
-//import com.kiwi.stripes.addon.SendSmsUtil;
-//import com.taobao.api.ApiException;
+import com.aliyuncs.dysmsapi.model.v20170525.QuerySendDetailsResponse;
+import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
+import com.kiwi.stripes.addon.SendSmsUtil;
 
 public class TestSmsSender {
-    private static String appkey = "23325747";
-    private static String secret = "247da014e93780039bd913fc0b9abed9";
-    private static String url = "http://gw.api.taobao.com/router/rest";//api请求地址
 
-    public static void main(String[] args) {
-        //throws    } ApiException {
+    public static void main(String[] args) throws Exception {
 
-        //SendSmsUtil.sendSmsVerificationCode(null,"13636315983","555555");
+        //发短信
+        String phoneNumber = "13636315983";
+        String signName = "阿里云短信测试专用";
+        //String signName = "沪牌不求人";
+        String templateCode = "SMS_79205024";
+        String templateParam = "{\"code\":\"6988\"}";
+        String outId = "Success";
 
 
-//        String json="{\"code\":\"888888\",\"product\":\"abc\"}";
-//        TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
-//        AlibabaAliqinFcSmsNumSendRequest req = new AlibabaAliqinFcSmsNumSendRequest();
-//        req.setExtend("123456");
-//        req.setSmsType("normal");
-//        req.setSmsFreeSignName("注册验证");
-//        req.setSmsParamString(json);
-//        req.setRecNum("13636315983");
-//        req.setSmsTemplateCode("SMS_5615114");
-//        AlibabaAliqinFcSmsNumSendResponse rsp = client.execute(req);
-//        System.out.println(rsp.getBody());
-//        try {
-//            rsp = client.execute(req);
-//            System.out.println(rsp.getBody());
-//        } catch (Exception e) {
-//            // TODO: handle exception
-//        }
+        SendSmsResponse response = SendSmsUtil.sendSms(phoneNumber, signName, templateCode, templateParam, outId);
+        System.out.println("短信接口返回的数据----------------");
+        System.out.println("Code=" + response.getCode());
+        System.out.println("Message=" + response.getMessage());
+        System.out.println("RequestId=" + response.getRequestId());
+        System.out.println("BizId=" + response.getBizId());
+
+        Thread.sleep(3000L);
+
+        //查明细
+        if(response.getCode() != null && response.getCode().equals("OK")) {
+            QuerySendDetailsResponse querySendDetailsResponse = SendSmsUtil.querySendDetails(response.getBizId(), phoneNumber);
+            System.out.println("短信明细查询接口返回数据----------------");
+            System.out.println("Code=" + querySendDetailsResponse.getCode());
+            System.out.println("Message=" + querySendDetailsResponse.getMessage());
+            int i = 0;
+            for(QuerySendDetailsResponse.SmsSendDetailDTO smsSendDetailDTO : querySendDetailsResponse.getSmsSendDetailDTOs())
+            {
+                System.out.println("SmsSendDetailDTO["+i+"]:");
+                System.out.println("Content=" + smsSendDetailDTO.getContent());
+                System.out.println("ErrCode=" + smsSendDetailDTO.getErrCode());
+                System.out.println("OutId=" + smsSendDetailDTO.getOutId());
+                System.out.println("PhoneNum=" + smsSendDetailDTO.getPhoneNum());
+                System.out.println("ReceiveDate=" + smsSendDetailDTO.getReceiveDate());
+                System.out.println("SendDate=" + smsSendDetailDTO.getSendDate());
+                System.out.println("SendStatus=" + smsSendDetailDTO.getSendStatus());
+                System.out.println("Template=" + smsSendDetailDTO.getTemplateCode());
+            }
+            System.out.println("TotalCount=" + querySendDetailsResponse.getTotalCount());
+            System.out.println("RequestId=" + querySendDetailsResponse.getRequestId());
+        }
     }
 }
