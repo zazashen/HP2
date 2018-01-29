@@ -73,6 +73,30 @@ var myApp = angular.module('myApp', ['ngAnimate','ui.router','myApp.filter', 'my
 			  url: '/prod2',
 			  templateUrl: 'parts/prod/prod4.html',
 		  })
+		  .state('start.flow', {
+			  url: '/flow',
+			  templateUrl: 'parts/flow/flow.html',
+		  })
+		  .state('start.flow.flow1', {
+			  url: '/flow1',
+			  templateUrl: 'parts/flow/flow1.html',
+		  })
+		  .state('start.flow.flow2', {
+			  url: '/flow2',
+			  templateUrl: 'parts/flow/flow2.html',
+		  })
+		  .state('start.flow.flow3', {
+			  url: '/flow3',
+			  templateUrl: 'parts/flow/flow3.html',
+		  })
+		  .state('start.flow.flow4', {
+			  url: '/flow4',
+			  templateUrl: 'parts/flow/flow4.html',
+		  })
+		  .state('start.flow.flow5', {
+			  url: '/flow5',
+			  templateUrl: 'parts/flow/flow5.html',
+		  })
 	  .state('userinfo', {
 		  url: '/userinfo',
 		  templateUrl: 'parts/user/userinfo.html',

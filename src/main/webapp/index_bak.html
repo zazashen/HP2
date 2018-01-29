@@ -11,14 +11,12 @@
 <link rel="icon" href="../../favicon.ico">
 <title>沪牌不求人</title>
 
-<!-- Bootstrap core/table CSS -->
+<!-- Bootstrap core CSS -->
 <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" href="js/table/bootstrap-table.css" />
-
-	<!-- Bootstrap theme -->
+<!-- Bootstrap theme -->
 <!-- link href="../../dist/css/bootstrap-theme.min.css" rel="stylesheet" -->
-<!--<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
--->
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
 <!-- Custom styles for this template -->
 <link type="text/css" rel="stylesheet" href="css/default.css" />
 <link type="text/css" rel="stylesheet" href="css/font.css" />
@@ -46,21 +44,20 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#/start/main" target="_self">
-					<img alt="沪牌不求人" src="img/iconNew.jpg"></a>
+				<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-road" aria-hidden="true"></span> 沪牌不求人</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li ui-sref-active="active" ui-sref="start.main"><a href="#/start/main">进入首页</a></a></li>
-					<li ui-sref-active="active" ui-sref="start.flow.flow1" ><a href="#/start/flow/flow1">拍牌流程</a></li>
-					<li ui-sref-active="active" ui-sref="start.service" ><a href="#/start/service/service1">代拍服务</a></li>
-					<li ui-sref-active="active" ui-sref="start.software.software1" ><a href="#/start/software/software1">拍牌软件</a></li>
-					<li ui-sref-active="active" ui-sref="start.data" ><a href="#/start/data/data1">历史数据</a></li>
 					<li ui-sref-active="active" ui-sref="start.about" ><a href="#/start/about">关于我们</a></li>
+					<!-- li ui-sref-active="active" ui-sref="start.contact" ><a href="#/start/contact">联系方式</a></li -->
+					<li ui-sref-active="active" ui-sref="start.prod.prod1" ><a href="#/start/prod/prod1">购买软件</a></li>
+					<!-- li ui-sref-active="active" ui-sref="start.other" ><a href="#/start/other">其他信息</a></li> -->
+					<!--<li ui-sref-active="active" ui-sref="userinfo.basic" ><a href="#/userinfo/basic">用户信息</a></li>-->
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<!--  li ><a href="#" ng-click="printme()">TEST</a></li>-->
-					<!--<li ng-show="UserSvc.getCurrentUser()"><a href="#" ng-click="signOut()">退出登录</a></li>-->
+					<li ng-show="UserSvc.getCurrentUser()"><a href="#" ng-click="signOut()">退出登录</a></li>
 					<!--<li ng-show="UserSvc.getCurrentUser()"><a href="#/userinfo/basic">[ {{ UserSvc.getCurrentUser().userName }} ]</a></li>
 					<li ng-show="!UserSvc.getCurrentUser()"><a data-toggle="modal" data-target="#signInBox" href="#">用户登录</a></li>
 					<li ng-show="!UserSvc.getCurrentUser()"><a data-toggle="modal" data-target="#signUpBox" href="#">用户注册</a></li>-->
@@ -68,26 +65,23 @@
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多内容 <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
 						  <!--<li><a href="#">我的信息</a></li>-->
-                        <li><a href="#">模拟器</a></li>
-						  <li><a href="#">拍牌日历</a></li>
-
-						  <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">国拍查询</li>
-
-						  <li><a href="#">中标查询</a></li>
-                        <li><a href="#">标书有效查询</a></li>
-                        <!--<li><a href="/act/signOut">退出登录</a></li>-->
+                        <li><a href="#">沪牌日历</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">优惠信息</li>
+						  <!--<li><a href="#">我的优惠码</a></li>
+                        <li><a href="#">我的推荐</a></li>
+                        <li><a href="/act/signOut">退出登录</a></li>-->
                     </ul>
                 </li>
               </ul>
         </div>
         <!--/.nav-collapse -->
-
 		</div>
 	</nav>
-
-	<div ui-view></div>
-
+	
+	<div class="container theme-showcase" role="main">
+		
+		<div ui-view></div>
 		
 		<nav class="navbar navbar-default navbar-fixed-bottom">
 			<div class="container-fluid">
@@ -124,9 +118,7 @@
 		<script src="js/ang/controller/signUp.js"></script>
 		<script src="js/ang/controller/forget.js"></script>
 
-	<script src="js/table/bootstrap-table.js"></script>
-
-
+	</div> 
 </body>
 </html>
 </stripes:layout-definition>
