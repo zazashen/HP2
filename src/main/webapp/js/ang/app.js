@@ -37,42 +37,12 @@ var myApp = angular.module('myApp', ['ngAnimate','ui.router','myApp.filter', 'my
 		  url: '/main',
 		  templateUrl: 'parts/main.html',
 	  })
-	  .state('start.other', {
-		  url: '/other',
-		  templateUrl: 'parts/other.html',
-	  })
-	  .state('start.forget', {
-		  url: '/forget',
-		  templateUrl: 'parts/forget.html',
-	  })
-	  .state('start.contact', {
-		  url: '/contact',
-		  templateUrl: 'parts/contact.html',
-	  })
+
 	  .state('start.about', {
 		  url: '/about',
 		  templateUrl: 'parts/about.html',
 	  })
-	  .state('start.prod', {
-		  url: '/prod',
-		  templateUrl: 'parts/prod/prodmain.html',
-	  })
-		  .state('start.prod.prod1', {
-			  url: '/prod1',
-			  templateUrl: 'parts/prod/prod1.html',
-		  })
-		  .state('start.prod.prod2', {
-			  url: '/prod2',
-			  templateUrl: 'parts/prod/prod2.html',
-		  })
-		  .state('start.prod.prod3', {
-			  url: '/prod2',
-			  templateUrl: 'parts/prod/prod3.html',
-		  })
-		  .state('start.prod.prod4', {
-			  url: '/prod2',
-			  templateUrl: 'parts/prod/prod4.html',
-		  })
+
 		  .state('start.flow', {
 			  url: '/flow',
 			  templateUrl: 'parts/flow/flow.html',
@@ -97,6 +67,51 @@ var myApp = angular.module('myApp', ['ngAnimate','ui.router','myApp.filter', 'my
 			  url: '/flow5',
 			  templateUrl: 'parts/flow/flow5.html',
 		  })
+	  .state('start.service', {
+			  url: '/service',
+			  templateUrl: 'parts/service/service.html',
+		  })
+		  .state('start.service.service1', {
+			  url: '/service1',
+			  templateUrl: 'parts/service/service1.html',
+		  })
+	  .state('start.data', {
+			  url: '/data',
+			  templateUrl: 'parts/data/data.html',
+		  })
+		  .state('start.data.data1', {
+			  url: '/data1',
+			  templateUrl: 'parts/data/data1.html',
+		  })
+	 .state('start.software', {
+			  url: '/software',
+			  templateUrl: 'parts/software/software.html',
+		  })
+		  .state('start.software.software1', {
+			  url: '/software1',
+			  templateUrl: 'parts/software/software1.html',
+		  })
+	 /*
+	  .state('start.prod', {
+	  url: '/prod',
+	  templateUrl: 'parts/prod/prodmain.html',
+	  })
+	  .state('start.prod.prod1', {
+	  url: '/prod1',
+	  templateUrl: 'parts/prod/prod1.html',
+	  })
+	  .state('start.prod.prod2', {
+	  url: '/prod2',
+	  templateUrl: 'parts/prod/prod2.html',
+	  })
+	  .state('start.prod.prod3', {
+	  url: '/prod2',
+	  templateUrl: 'parts/prod/prod3.html',
+	  })
+	  .state('start.prod.prod4', {
+	  url: '/prod2',
+	  templateUrl: 'parts/prod/prod4.html',
+	  })
 	  .state('userinfo', {
 		  url: '/userinfo',
 		  templateUrl: 'parts/user/userinfo.html',
@@ -110,6 +125,18 @@ var myApp = angular.module('myApp', ['ngAnimate','ui.router','myApp.filter', 'my
 			  url: '/balance',
 			  templateUrl: 'parts/user/balance.html',
 		  })
+		  .state('start.other', {
+			  url: '/other',
+			  templateUrl: 'parts/other.html',
+		  })
+		  .state('start.forget', {
+			  url: '/forget',
+			  templateUrl: 'parts/forget.html',
+		  })
+		  .state('start.contact', {
+			  url: '/contact',
+			  templateUrl: 'parts/contact.html',
+		  })
 		  .state('userinfo.basic', {
 			  url: '/basic',
 			  templateUrl: 'parts/user/basic.html',
@@ -119,7 +146,8 @@ var myApp = angular.module('myApp', ['ngAnimate','ui.router','myApp.filter', 'my
 				  console.log(' -->> userinfo.basic');
 				  UserSvc.ajaxGetUserBasicInfo();
 			  },
-		  })
+
+		  })*/
 	  ;
 	  $urlRouterProvider.otherwise('/start/main');
 	})
