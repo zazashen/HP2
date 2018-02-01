@@ -1,0 +1,62 @@
+[{
+  "month":"2018/01",
+  "attend":"22.6w",
+  "cap":"1.21w",
+  "deal_price":"87900",
+  "alarm_price":"86300",
+  "balance":"1600",
+  "hit_rate":"5.38%",
+  "month_hid":"201801"
+},
+  {
+  "month":"2017/12",
+  "attend":"22.8w",
+  "cap":"1.21w",
+  "deal_price":"92800",
+  "alarm_price":"92000",
+  "balance":"800",
+  "hit_rate":"5.32%",
+  "month_hid":"201712"
+
+}, {
+  "month":"2017/11",
+  "attend":"22.6w",
+  "cap":"1.1w",
+  "deal_price":"93100",
+  "alarm_price":"92000",
+  "balance":"1100",
+  "hit_rate":"4.85%",
+  "month_hid":"201711"
+
+},
+  {
+    "month":"2017/10",
+    "attend":"24.4w",
+    "cap":"1.13w",
+    "deal_price":"93500",
+    "alarm_price":"92000",
+    "balance":"1500",
+    "hit_rate":"4.65%",
+    "month_hid":"201710"
+
+  }, {
+  "month":"2017/09",
+  "attend":"25w",
+  "cap":"1.24w",
+  "deal_price":"91300",
+  "alarm_price":"89800",
+  "balance":"1500",
+  "hit_rate":"4.95%",
+  "month_hid":"201709"
+
+}, {
+  "month":"2017/08",
+  "attend":"25.6w",
+  "cap":"1.05w",
+  "deal_price":"91600",
+  "alarm_price":"89800",
+  "balance":"1800",
+  "hit_rate":"4.12%",
+  "month_hid":"201708"
+
+}]

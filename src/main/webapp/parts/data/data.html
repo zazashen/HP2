@@ -6,22 +6,63 @@
 </head>
 <body>
 
-<div class="row article_row">
-    <div class="col-sm-2 sidebar col-sm-offset-1">
-        <ul class="nav nav-sidebar">
-            <li id="flow1" class="active"><a href="#/start/flow/flow1" ui-sref-active="btn-info" ui-sref="start.flow.flow1">预备篇 <span class="sr-only">预备篇 </span></a></li>
-            <li id="flow2" ><a href="#/start/flow/flow2" ui-sref-active="btn-info" ui-sref="start.flow.flow2">网拍篇 <span class="sr-only">网拍篇 </span></a></li>
-            <li id="flow3"><a href="#/start/flow/flow3" ui-sref-active="btn-info" ui-sref="start.flow.flow3">原则篇 <span class="sr-only">原则篇 </span></a></li>
-            <li id="flow4"><a href="#/start/flow/flow4" ui-sref-active="btn-info" ui-sref="start.flow.flow4">策略篇 <span class="sr-only">策略篇 </span></a></li>
-            <li id="flow5"><a href="#/start/flow/flow5" ui-sref-active="btn-info" ui-sref="start.flow.flow5">公司篇 <span class="sr-only">公司篇 </span></a></li>
-        </ul>
-    </div>
+<script type="text/javascript">
+    $().ready(function() {
+        $('#dataList').bootstrapTable({
+            onLoadSuccess: function (res) {
+                $($('#dataList tr')[1]).addClass('active');
+            }
+        }) .on('click-row.bs.table', function (e, row, $element) {
+            $("#data_img").attr("src", "../../img/data/" + row.month_hid + ".jpg");
+            $element.addClass('active').siblings().removeClass('active');
+        });
+    })
+</script>
 
-    <div class="col-sm-8 article_column col-sm-offset-3">
-        <div class="article_content">
-            <div ui-view ></div>
-        </div>
+<div class="row article_row">
+    <div class="col-sm-5 col-sm-offset-1 article_column data_column">
+
+        <table id="dataList" data-toggle="table" data-url="parts/data/data.json"
+               data-pagination="true"
+               data-search="true"
+               data-show-toggle="true" data-select-item-name="toolbar1" class="data_table">
+            <thead>
+            <tr>
+                <th data-field="month">月份</th>
+                <th data-field="attend" >参与人数</th>
+                <th data-field="cap" >额度</th>
+                <th data-field="deal_price" >最低成交价</th>
+                <th data-field="alarm_price" >警示价</th>
+                <th data-field="balance" >差额</th>
+                <th data-field="hit_rate" >命中率</th>
+                <th data-field="month_hid"  data-visible="false" ></th>
+
+            </tr>
+            </thead>
+        </table>
+
+        <p>
+            <a href="https://mp.weixin.qq.com/s?__biz=MzA5Njk5NDI0MA==&tempkey=OTQyX1V0U2ZmQWtzS3VBNllGV3ZTVW5EY1hMRzZlVXJhY3ptdUZRZU9UMHlKTTZucWJXUXdkWnpLS2xkQ2Q0OWZ3aHAxbWtRT21GRkhMUWtYa3pVVGdFai00LVl6WndPRWVFSjBteEZrblpJaUM0eEktTjV5enR2WE1FREpkWFJ0SVgyZWFZUkxrcWNSQW1zVG52LVhtWWJjbXVjT0NXWnNzUG94T0ZiTWd%2Bfg%3D%3D&chksm=0b9b8b2a3cec023c53ef984fa7e9321510cf5ab34e4f6239c6c1988d48f1d723ff05345e5330#rd"
+               target="_blank" class="btn btn-info btn-lg data_button" target="_self">
+                2018全年数据策略</a>
+
+            <a href="https://mp.weixin.qq.com/s?__biz=MzA5Njk5NDI0MA==&tempkey=OTQyX0pBM0NDM1VpbWF2N2JlRGlTVW5EY1hMRzZlVXJhY3ptdUZRZU9UMHlKTTZucWJXUXdkWnpLS2xkQ2Q2OG5xNVJYdEJ6NzRnTVFFN3U2RkE2c2NUQWRyUUtYazNOOVhPcElISVEzOWc3el9nTFEwMDBhUmpfU19MQlZJR1gwVDhzQW1HclJyRnR2THp5R1lXZkh2N0Q0UUlmSjhPQnl5QWFILUh1TFF%2Bfg%3D%3D&chksm=0b9b8bd73cec02c109111b991dfd6af21876bd189844a281435f9b065a34d164b5fcb517e01f#rd"
+               target="_blank" class="btn btn-info btn-lg" target="_self">
+                2017全年数据策略</a>
+            <br/><br/>
+        </p>
+
     </div>
+    <div class="col-sm-1 arrow_div">
+        <img id="arrow_img" src="../../img/data/arrow.jpg" alt=""/>
+    </div>
+    <div class="col-sm-4 data_column">
+        <img id="data_img" src="../../img/data/201801.jpg" alt=""/>
+    </div>
+</div>
+<div class="row " style="background-color:#f6f6f6;">
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+
 </div>
 
 </body>

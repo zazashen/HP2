@@ -40,6 +40,10 @@ body {
   margin-left:50px;
   margin-right:100px;
 }
+.data_table {
+  cursor: pointer !important;
+  margin-top:25px !important;
+}
 
 .about_content {
   background-color:white;
@@ -49,8 +53,20 @@ body {
   margin-left:7px;
 }
 
+.data_button {
+  margin-right: 30px !important;
+}
+
 .about_column {
   margin-top:30px;
+}
+
+.arrow_div {
+  margin-top:82px;
+}
+
+.data_column {
+  margin-top:35px;
 }
 
 .sidebar{
