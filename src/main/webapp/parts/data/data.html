@@ -9,6 +9,7 @@
 <script type="text/javascript">
     $().ready(function() {
         $('#dataList').bootstrapTable({
+            pageSize:3,
             onLoadSuccess: function (res) {
                 $($('#dataList tr')[1]).addClass('active');
             }
